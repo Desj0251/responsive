@@ -4,18 +4,15 @@ Droid Serif
 Droid Sans
 Droid Sans Mono
 
-Font Scaling
+Font Scaling:
 6.854rem
 4.236rem
 2.618rem
 1.618rem
 1.0rem
 0.618rem
-
-Colour scheme
-
 **************************************************/
-@import 'https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif';
+@import 'https://fonts.googleapis.com/css?family=Rokkitt%7cUbuntu';
 
 *{
     padding: 0;
@@ -25,29 +22,32 @@ Colour scheme
 html{
     font-size: 16px;
     line-height: 1.6;
-    font-family: 'Droid Sans', 'more font stack stuff', sans-serif;
+    font-family: Ubuntu, Verdana, "Arial Rounded MT Bold", sans-serif;
     padding: 0 3rem;
 }
 /*************************** 
 DEFAULTS - MOBILE FIRST 
 ***************************/
 h1{
-    font: bold 6.854rem 'Droid Serif', 'more font stack stuff', serif;
-    padding: 2.618rem 0;
+    font: bold 6.854rem Rokkitt, Courier, "Courier New", serif;
+    text-shadow: 0px 4px 6px #000;
+    padding: 2.5rem 0;
     text-align: center;
-    margin-bottom: 1.618rem;
+    margin-bottom: 1.5rem;
+    border: solid 3px #555;
     background-image: url(../img/300.jpeg);
     background-size: cover;
     background-position: 20% 50%;
+    background-color: lightslategray;
 }
 h2{
-    font: bold 1.618rem 'Droid Serif', 'more font stack stuff', serif;
+    font: bold 2.6rem Rokkitt, Courier, "Courier New", serif;
 }
 li, p, a{
-    font: bold 1.0rem 'Droid Sans', 'more font stack stuff', sans-serif;
+    font: bold 1.0rem Ubuntu, Verdana, "Arial Rounded MT Bold", sans-serif;
 }
 pre, code, kbd{
-    font: normal 1.0rem 'Droid Sans Mono', 'more font stack stuff', 
+    font: normal 1.0rem Rokkitt, Courier, "Courier New", serif;
 }
 /***************************
     LAYOUT - MOBILE FIRST
@@ -58,8 +58,8 @@ pre, code, kbd{
 }
 header{
     width: 100%;
-    color: #efe;
-    text-shadow: 0px 4px 6px #000;
+    color: #3cb0fd;
+    box-shadow: 0px 4px 6px #000;
 }
 nav{
     width: 100%;
@@ -69,7 +69,13 @@ nav>ul{
 }
 nav li{
     width: 100%;
-    padding: 0.618rem 0;
+    padding: 0.5rem 0;
+    border-bottom: solid 2px #555;
+    border-left: solid 2px #555;
+    border-right: solid 2px #555;
+}
+nav li:nth-child(1){
+    border-top: solid 2px #555;
 }
 ul{
     list-style: none;
@@ -79,14 +85,15 @@ nav a:link,
 nav a:visited{
     display: block;
     text-decoration: none;
-    font: bold 1.618rem 'Droid Sans', 'more font stack stuff', sans-serif;
+    font: bold 1.6rem 'Ubuntu', 'more font stack stuff', sans-serif;
     text-align: center;
     margin: 0;
 }
 nav a:active,
 nav a:focus,
 nav a:hover{
-    
+    color: #3cb0fd;
+    transition: all 0.25s ease-out;
 }
 main{
     width: 100%;
@@ -94,39 +101,40 @@ main{
 .col{
     float: none;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0rem;
 }
 .col img{
     width: 100%;
     height: auto;
     max-width: 100%;
-    background-color: azure;
-    margin-bottom: 0.618rem;
+    background-color: lightslategray;
+    margin-bottom: 0.5rem;
+    border: solid 2px #555;
 }
 footer{
     width: 100%;
-    margin-top: 0.618rem;
-    padding: 0.618rem 0;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    font: bold 1.2rem;
 }
 .col p{
-    padding-top: 0.618rem;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
 }
 .col h2{
-    padding: 1rem 0;
-    margin-top: 0.618rem;
+    padding: 0.5rem 0;
 }
 .footer ul{
-    margin-top: 0.618rem;
+    margin-top: 0.5rem;
     text-align: center;
 }
 .footer li{
-    padding: 0.618rem 0;
+    padding: 0.5rem 0;
+    font: bold 1.2rem;
 }
-
 /***************************
     LAYOUT - MEDIUM SIZE
 ***************************/
-
 @media screen and (min-width:600px){
     .wrapper{
         width: 100%;
@@ -134,25 +142,50 @@ footer{
     header{
         width: 100%;
     }
+    h1{
+        font-size: 4.236rem;
+    }
     nav{
         width: 90%;
     }
     nav li{
         float: left;
         width: 20%;
+        border-bottom: solid 2px #555;
+        border-right: none;
+        border-left: none;
+        border-top: solid 2px #555;
+    }
+    nav li:nth-child(1){
+        border-bottom: solid 2px #555;
+        border-left: solid 2px #555;
+        border-top: solid 2px #555;
+        border-right: none;
+    }
+    nav li:nth-child(5){
+        border-right: solid 2px #555;
     }
     .main{
         clear: both; 
         width: 90%;   
     }
+    h2{
+        font-size: 1.618rem;
+        font-weight: bolder;
+    }
     .col{
         float: left;
         width: 50%;
+        padding-right: 1.0rem;
     }
     .col img{
         width: 60%;
         float: left;
-        margin-right: 0.75rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0rem;
+    }
+    .col p{
+        font-size: 1.0rem;
     }
     .footer{
         clear: both;
@@ -169,12 +202,31 @@ footer{
     header{
         width: 100%;
     }
+    h1{
+        font-size: 6.8rem;
+    }
+    h2{
+        font-size: 2.618rem;
+    }
     nav{
         width: 90%;
     }
     nav li{
         float: left;
         width: 20%;
+        border: none;
+    }
+    nav li:nth-child(1){
+        border: none;
+    }
+    nav li:nth-child(5){
+        border: none;
+    }
+    nav a,
+    nav a:link,
+    nav a:visited{
+        text-align: left;
+        font-size: 2.1rem;
     }
     .main{
         width: 90%;
@@ -183,10 +235,13 @@ footer{
         float: left;
         width: 50%;
     }
+    .col p{
+        font-size: 1.0rem;
+    }
     .col img{
         width: 50%;
         float: left;
-        margin-right: 0.75rem;
+        margin-right: 0.5rem;
     }
     .footer{
         clear: both;
@@ -203,6 +258,9 @@ footer{
     header{
         width: 100%;
     }
+    h1{
+        font-size: 10rem;
+    }
     nav{
         float: left;
         width: 30%;
@@ -215,6 +273,23 @@ footer{
         float: left;
         width: 70%;
     }
+    h2{
+        font-size: 2.618rem;
+    }
+    nav a,
+    nav a:link,
+    nav a:visited{
+        text-align: center;
+        font-size: 2.618rem;
+    }
+    .col{
+        padding: 0.5rem;
+    }
+    .col>h2{
+        margin-top: 0;
+        padding: 0;
+        margin-bottom: 0.5rem;
+    }
     .col{
         float: left;
         width: 50%;
@@ -222,7 +297,7 @@ footer{
     .col img{
         width: 55%;
         float: left;
-        margin-right: 0.75rem;
+        margin-right: 0.5rem;
     }
     .footer{
         clear: both;
